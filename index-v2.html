@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Hebbar Jyoti Mohan | Counselor in Bangalore</title>
+    <meta name="description" content="Feeling stuck, anxious, or overwhelmed? RCI Certified Counselor with 15+ years experience. Affordable, confidential sessions in Bangalore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --accent: #F59E0B;
+            --dark: #1F2937;
+            --gray: #6B7280;
+            --light: #F9FAFB;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sticky CTA Button */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sticky-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .sticky-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .sticky-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .sticky-btn.call {
+            background: var(--primary);
+        }
+
+        /* Simple Nav */
+        .nav {
+            padding: 15px 0;
+            background: var(--white);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* HERO - The Money Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero-badge i {
+            color: var(--accent);
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary);
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .trust-item i {
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-img-placeholder {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-img-placeholder i {
+            font-size: 80px;
+            opacity: 0.9;
+        }
+
+        .hero-img-placeholder span {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .hero-card {
+            position: absolute;
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-card.reviews {
+            bottom: 30px;
+            left: -30px;
+        }
+
+        .hero-card.exp {
+            top: 30px;
+            right: -30px;
+        }
+
+        .hero-card .stars {
+            color: var(--accent);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .hero-card .number {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .hero-card .label {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Pain Points - Quick Scanner Section */
+        .pain-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .pain-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pain-header h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .pain-header p {
+            color: var(--gray);
+            font-size: 18px;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .pain-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .pain-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .pain-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .pain-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .pain-card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Quick Breathing Tool */
+        .tool-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, #374151 100%);
+            color: var(--white);
+        }
+
+        .tool-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tool-text h2 {
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tool-text p {
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+
+        .breathing-circle {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: rgba(16, 185, 129, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            transition: all 4s ease-in-out;
+            border: 3px solid var(--primary);
+        }
+
+        .breathing-circle.expand {
+            width: 280px;
+            height: 280px;
+            background: rgba(16, 185, 129, 0.5);
+        }
+
+        .breathing-circle .instruction {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .breathing-circle .tap {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        /* Social Proof */
+        .proof-section {
+            padding: 60px 0;
+            background: var(--light);
+        }
+
+        .proof-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .proof-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .testimonial-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .testimonial-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            flex: 0 0 320px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            scroll-snap-align: start;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card .stars {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .quote {
+            font-size: 15px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-card .author {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        /* Credentials Strip */
+        .cred-strip {
+            padding: 40px 0;
+            background: var(--white);
+            border-top: 1px solid #E5E7EB;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .cred-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .cred-item {
+            text-align: center;
+        }
+
+        .cred-item i {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .cred-item .label {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .cred-item .value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: var(--primary);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .final-cta .btn {
+            background: var(--white);
+            color: var(--primary);
+            font-size: 18px;
+            padding: 18px 40px;
+        }
+
+        .final-cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .final-cta .contact-info {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .final-cta .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        /* Footer - Minimal */
+        .footer {
+            padding: 30px 0;
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-sub {
+                margin: 0 auto 30px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-trust {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .hero-card {
+                display: none;
+            }
+
+            .tool-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cred-grid {
+                gap: 30px;
+            }
+
+            .sticky-cta {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .sticky-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Contact Buttons -->
+    <div class="sticky-cta">
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Hebbar,%20I'd%20like%20to%20book%20a%20consultation" class="sticky-btn whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+91XXXXXXXXXX" class="sticky-btn call" aria-label="Call">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Simple Nav -->
+    <nav class="nav">
+        <div class="container">
+            <a href="#" class="nav-logo">Dr. Hebbar Jyoti Mohan</a>
+            <a href="https://wa.me/91XXXXXXXXXX" class="nav-cta">
+                <i class="fab fa-whatsapp"></i> Book Free Consult
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-shield-check"></i>
+                        RCI Certified · Govt. of India
+                    </div>
+                    <h1>
+                        Feeling <span class="highlight">Stuck, Anxious,</span> or Overwhelmed?
+                    </h1>
+                    <p class="hero-sub">
+                        You don't have to figure it out alone. Get professional, confidential support from an experienced counselor. <strong>First consultation is free.</strong>
+                    </p>
+                    <div class="hero-btns">
+                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Hebbar,%20I'd%20like%20to%20book%20a%20consultation" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                        <a href="tel:+91XXXXXXXXXX" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>15+ Years Experience</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>1000+ Lives Changed</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Affordable Rates</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-img-placeholder">
+                        <i class="fas fa-user-md"></i>
+                        <span>Dr. Hebbar Jyoti Mohan</span>
+                    </div>
+                    <div class="hero-card reviews">
+                        <div class="stars">★★★★★</div>
+                        <div class="number">50+</div>
+                        <div class="label">Happy Clients</div>
+                    </div>
+                    <div class="hero-card exp">
+                        <div class="number">15+</div>
+                        <div class="label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points - Quick Scan -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="pain-header">
+                <h2>Is This You?</h2>
+                <p>Tap if any of these sound familiar</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">😔</div>
+                    <div>
+                        <h3>Can't stop overthinking</h3>
+                        <p>Mind racing at night, constant worry</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">😤</div>
+                    <div>
+                        <h3>Anger & mood swings</h3>
+                        <p>Snapping at loved ones, feeling guilty after</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">📱</div>
+                    <div>
+                        <h3>Phone addiction</h3>
+                        <p>Doom scrolling, can't put it down</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">😴</div>
+                    <div>
+                        <h3>No motivation</h3>
+                        <p>Feeling lazy, can't stay consistent</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">😰</div>
+                    <div>
+                        <h3>Exam/work stress</h3>
+                        <p>Pressure is crushing you</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">💔</div>
+                    <div>
+                        <h3>Relationship issues</h3>
+                        <p>With parents, partner, or friends</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try This Now -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-content">
+                <div class="tool-text">
+                    <h2>Try This Right Now</h2>
+                    <p>Tap the circle and breathe with it. Just 30 seconds can change how you feel.</p>
+                    <p style="font-size: 14px; opacity: 0.7;">This is one of the techniques I teach my clients. Imagine what a full session could do for you.</p>
+                </div>
+                <div class="tool-visual">
+                    <div class="breathing-circle" id="breathingCircle" onclick="toggleBreathing()">
+                        <span class="instruction" id="breathText">Tap to Start</span>
+                        <span class="tap" id="breathTap">30 second exercise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="proof-header">
+                <h2>Real People, Real Results</h2>
+            </div>
+            <div class="testimonial-scroll">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"My daughter's exam anxiety is gone. She actually looks forward to tests now!"</p>
+                    <p class="author">— Meera S., Parent</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"I learned to control my anger. My wife says I'm a different person now."</p>
+                    <p class="author">— Arun V., IT Professional</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"My son was addicted to games. Dr. Hebbar helped without any lectures."</p>
+                    <p class="author">— Sunitha M., Parent</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Finally found clarity about my career. Best decision I made."</p>
+                    <p class="author">— Priya R., Student</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Strip -->
+    <section class="cred-strip">
+        <div class="container">
+            <div class="cred-grid">
+                <div class="cred-item">
+                    <i class="fas fa-certificate"></i>
+                    <div class="value">RCI Certified</div>
+                    <div class="label">Govt. of India</div>
+                </div>
+                <div class="cred-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="value">M.Sc Psychology</div>
+                    <div class="label">& Counseling</div>
+                </div>
+                <div class="cred-item">
+                    <i class="fas fa-award"></i>
+                    <div class="value">Honorary Doctorate</div>
+                    <div class="label">Theophany University</div>
+                </div>
+                <div class="cred-item">
+                    <i class="fas fa-users"></i>
+                    <div class="value">Lions Club</div>
+                    <div class="label">Executive Member</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Feel Better?</h2>
+            <p>First consultation is FREE. No pressure, no judgment.</p>
+            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Hebbar,%20I'd%20like%20to%20book%20a%20free%20consultation" class="btn">
+                <i class="fab fa-whatsapp"></i> Book Free Consultation
+            </a>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bangalore, Karnataka</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon-Sat: 10AM - 6PM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Dr. Hebbar Jyoti Mohan · RCI Certified Counselor & Psychologist</p>
+        </div>
+    </footer>
+
+    <script>
+        let isBreathing = false;
+        let breathingInterval;
+        const circle = document.getElementById('breathingCircle');
+        const text = document.getElementById('breathText');
+        const tap = document.getElementById('breathTap');
+
+        function toggleBreathing() {
+            if (isBreathing) {
+                stopBreathing();
+            } else {
+                startBreathing();
+            }
+        }
+
+        function startBreathing() {
+            isBreathing = true;
+            let phase = 'inhale';
+            tap.textContent = '';
+            
+            function breathCycle() {
+                if (!isBreathing) return;
+                
+                if (phase === 'inhale') {
+                    circle.classList.add('expand');
+                    text.textContent = 'Breathe In...';
+                    phase = 'exhale';
+                } else {
+                    circle.classList.remove('expand');
+                    text.textContent = 'Breathe Out...';
+                    phase = 'inhale';
+                }
+                
+                breathingInterval = setTimeout(breathCycle, 4000);
+            }
+            
+            breathCycle();
+        }
+
+        function stopBreathing() {
+            isBreathing = false;
+            clearTimeout(breathingInterval);
+            circle.classList.remove('expand');
+            text.textContent = 'Tap to Start';
+            tap.textContent = 'Feel better? Book a session';
+        }
+
+        // Auto-stop after 30 seconds
+        setTimeout(() => {
+            if (isBreathing) {
+                stopBreathing();
+            }
+        }, 32000);
+    </script>
+</body>
+</html>
